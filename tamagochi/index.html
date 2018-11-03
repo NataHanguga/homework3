@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tamagochi</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="functional.js"></script>
+    <!-- <script src="/j.js"></script> -->
+</head>
+
+<body>
+    <form name="KaruPet">
+
+        <div id="TitleText">
+            <h1> Tamagochi Pet</h1>
+            <h2 id="name"></h2>
+        </div>
+        <div id="mess">
+            Hunger Level:<span id="hungger"></span><br>
+            Bladder Level:<span id="bladder"></span><br>
+            Fun Level: <span id="fun"></span><br>
+            Energy Level: <span id="energy"></span><br>
+            Happiness Level: <span id="happy"></span><br>
+        </div>
+        <div id="petPosition">
+            <div id="Pet">
+                <p align="Center">
+                    <img id="Sprite" src="https://orig00.deviantart.net/a31d/f/2018/048/c/e/thing
+				_for_js_project_by_karukami1-dc3fiet.png"></img>
+                </p>
+            </div>
+
+            <div id="options">
+                <div id="TimeCounter">
+                    <!--This is the Money display-->
+                    <p>Live time: <output type="inline" id="TimeValue" value="0"></output> s</p>
+                </div>
+                <div id="StatHunger">
+                    <p align="Center">
+                        Hunger: <progress id="HungerBar" min="0" max="100" value="100">
+                        </progress>
+                    </p>
+                </div>
+
+                <div id="StatBladder">
+                    <p align="Center">
+                        Bladder: <progress id="BladderBar" min="0" max="100" value="100">
+                        </progress>
+                    </p>
+                </div>
+
+                <div id="StatFun">
+                    <p align="Center">
+                        Fun: <progress id="FunBar" min="0" max="100" value="100">
+                        </progress>
+                    </p>
+                </div>
+                <div id="StatEnergy">
+                    <p align="Center">
+                        Energy: <progress id="EnergyBar" min="0" max="100" value="100">
+                        </progress>
+                    </p>
+                </div>
+                <div id="StatHappiness">
+                    <p align="Center">
+                        Happiness: <progress id="HappinessBar" min="0" max="100" value="100">
+                        </progress>
+                    </p>
+                </div>
+
+            </div>
+            <div id="Buttons">
+                <p align="Center">
+                    <input id="BtnHunger" type="Button" value="Feed">
+                    <input id="BtnBladder" type="Button" value="Bathroom">
+                    <input id="BtnFun" type="Button" value="Play">
+                    <input id="BtnEnergy" type="Button" value="Sleep">
+                    <input id="BtnHappiness" type="Button" value="Give Happy">
+                    <input id="BtnKill" type="Button" value="Kill Pet">
+                </p>
+            </div>
+            <div id="mem"></div>
+
+</body>
+
+</html>
