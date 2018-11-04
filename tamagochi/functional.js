@@ -1,122 +1,20 @@
 function Pet(name) {
-    var interval = 1000;
-    var pet = {
-        time: 0,
-        hunger: 100,
-        clock1: setInterval(depleteH, interval),
-        bladder: 100,
-        clock2: setInterval(depleteB, interval),
-        fun: 100,
-        clock3: setInterval(depleteF, interval),
-        energy: 100,
-        clock4: setInterval(depleteE, interval),
-        happy: 100,
-        clock5: setInterval(depleteHap, interval),
-        gameover: 0
-    }
-    // document.getElementById("BtnKill").dblclick = pet.hi();
-    document.getElementById("BtnHunger").onclick = fillHunger;
-    document.getElementById("BtnBladder").onclick = fillBladder;
-    document.getElementById("BtnFun").onclick = fillFun;
-    document.getElementById("BtnEnergy").onclick = fillEnergy;
-    document.getElementById("BtnHappiness").onclick = fillHappy;
-    document.getElementById("BtnKill").onclick = killPet;
-
-    function gameovercheck() {
-        if (pet.hunger == 0 && pet.bladder == 0 && pet.fun == 0 && pet.happy == 0 && pet.energy == 0 && pet.gameover == 0) {
-            pet.gameover++;
-            document.getElementById('name').innerHTML = 'RIP\n' + name;
-            alert("Game Over!");
-            spriteHandler();
-
-        }
-        else {
-            spriteHandler();
-        }
+    function Animal(time, hunger, clock1, bladder, clock2, fun, clock3, energy, clock4, happy, clock5, gameover) {
+        this.time = time;//0;
+        this.hunger = hunger;//100;
+        this.clock1 = clock1;//setInterval(depleteH, interval);
+        this.bladder = bladder;//100;
+        this.clock2 = clock2;//setInterval(depleteB, interval);
+        this.fun = fun;//100;
+        this.clock3 = clock3;//setInterval(depleteF, interval);
+        this.energy = energy;//100;
+        this.clock4 = clock4;//setInterval(depleteE, interval);
+        this.happy = happy;//100;
+        this.clock5 = clock5;//setInterval(depleteHap, interval);
+        this.gameover = gameover;//0;
     }
 
-    function spriteHandler() {
-        if (pet.hunger == 0 && pet.bladder == 0 && pet.fun == 0 && pet.energy == 0 && pet.happy == 0) {
-            document.getElementById("Sprite").src = "https://orig00.deviantart.net/7a8e/f/2018/049/f/f/dead_pet_asset_js_game_by_karukami1-dc3jgfu.png";
-        }
-    }
-
-    function getTime() {
-        if (pet.hunger > 0 && pet.bladder > 0 && pet.fun > 0 && pet.energy > 0 && pet.happy > 0) {
-            document.getElementById("TimeValue").value = pet.time;
-            pet.time++;
-        }
-        if (pet.time == 1000) alert('good job)) your pet still alive');
-        else if (pet.time == 3000) alert('u a good ovner)) your pet still alive');
-    }
-    setInterval(getTime, 1000);
-
-
-    function killPet() {
-        pet.fun = 0;
-        pet.happy = 0;
-        pet.hunger = 0;
-        pet.bladder = 0;
-        pet.energy = 0;
-        gameovercheck();
-        delete pet;
-    }
-
-    function fillHunger() {
-        if (pet.hunger <= 99 && pet.hunger != 0) {
-            pet.hunger += 10;
-        }
-        else if (pet.hunger == 0 || pet.hunger > 100) {
-            pet.hunger += 0;
-        } else if (pet.hunger <= 91 && pet.hunger <= 100) {
-            pet.hunger += 100 - pet.hunger;
-        }
-    }
-
-    function fillBladder() {
-        if (pet.bladder <= 99 && pet.bladder != 0) {
-            pet.bladder += 10;
-        }
-        else if (pet.bladder == 0 || pet.bladder > 100) {
-            pet.bladder += 0;
-        } else if (pet.bladder <= 91 && pet.bladder <= 100) {
-            pet.bladder += 100 - pet.bladder;
-        }
-    }
-
-    function fillFun() {
-        if (pet.fun <= 99 && pet.bladder != 0) {
-            pet.fun += 10;
-        }
-        else if (pet.fun == 0 || pet.fun > 100) {
-            pet.fun += 0;
-        } else if (pet.fun <= 91 && pet.fun <= 100) {
-            pet.fun += 100 - pet.fun;
-        }
-    }
-
-    function fillEnergy() {
-        if (pet.energy <= 99 && pet.hunger != 0) {
-            pet.energy += 10;
-        }
-        else if (pet.energy == 0 || pet.energy > 100) {
-            pet.energy += 0;
-        } else if (pet.energy <= 91 && pet.energy <= 100) {
-            pet.energy += 100 - pet.energy;
-        }
-    }
-
-    function fillHappy() {
-        if (pet.happy <= 99 && pet.bladder != 0 && pet.fun != 0 && pet.hunger != 0) {
-            pet.happy += 10;
-        }
-        else if (pet.happy == 0 || pet.happy > 100) {
-            pet.happy += 0;
-        } else if (pet.happy <= 91 && pet.happy <= 100) {
-            pet.happy += 100 - pet.happy;
-        }
-    }
-
+    var pet = new Animal(0, 100, setInterval(depleteH, 1000), 100, setInterval(depleteB, 1000), 100, setInterval(depleteF, 1000), 100, setInterval(depleteE, 1000), 100, setInterval(depleteHap, 1000), 0);
     function depleteH() {
         if (pet.hunger == 0) {
             document.getElementById('hungger').innerHTML = "Your pet is starving!";
@@ -230,6 +128,109 @@ function Pet(name) {
 
     }
 
+    document.getElementById("BtnHunger").onclick = fillHunger;
+    document.getElementById("BtnBladder").onclick = fillBladder;
+    document.getElementById("BtnFun").onclick = fillFun;
+    document.getElementById("BtnEnergy").onclick = fillEnergy;
+    document.getElementById("BtnHappiness").onclick = fillHappy;
+    document.getElementById("BtnKill").onclick = killPet;
+
+    function gameovercheck() {
+        if (pet.hunger == 0 && pet.bladder == 0 && pet.fun == 0 && pet.happy == 0 && pet.energy == 0 && pet.gameover == 0) {
+            pet.gameover++;
+            document.getElementById('name').innerHTML = 'RIP\n' + name;
+            alert("Game Over!");
+            spriteHandler();
+            delete pet;
+
+        }
+        else {
+            spriteHandler();
+            delete pet;
+        }
+    }
+
+    function spriteHandler() {
+        if (pet.hunger == 0 && pet.bladder == 0 && pet.fun == 0 && pet.energy == 0 && pet.happy == 0) {
+            document.getElementById("Sprite").src = "https://orig00.deviantart.net/7a8e/f/2018/049/f/f/dead_pet_asset_js_game_by_karukami1-dc3jgfu.png";
+        }
+    }
+
+    function getTime() {
+        if (pet.hunger > 0 && pet.bladder > 0 && pet.fun > 0 && pet.energy > 0 && pet.happy > 0) {
+            document.getElementById("TimeValue").value = pet.time;
+            pet.time++;
+        }
+        if (pet.time == 1000) alert('good job)) your pet still alive');
+        else if (pet.time == 3000) alert('u a good ovner)) your pet still alive');
+    }
+    setInterval(getTime, 1000);
+
+
+    function killPet() {
+        pet.fun = 0;
+        pet.happy = 0;
+        pet.hunger = 0;
+        pet.bladder = 0;
+        pet.energy = 0;
+        gameovercheck();
+        delete pet;
+    }
+
+    function fillHunger() {
+        if (pet.hunger <= 99 && pet.hunger != 0) {
+            pet.hunger += 10;
+        }
+        else if (pet.hunger == 0 || pet.hunger > 100) {
+            pet.hunger += 0;
+        } else if (pet.hunger <= 91 && pet.hunger <= 100) {
+            pet.hunger += 100 - pet.hunger;
+        }
+    }
+
+    function fillBladder() {
+        if (pet.bladder <= 99 && pet.bladder != 0) {
+            pet.bladder += 10;
+        }
+        else if (pet.bladder == 0 || pet.bladder > 100) {
+            pet.bladder += 0;
+        } else if (pet.bladder <= 91 && pet.bladder <= 100) {
+            pet.bladder += 100 - pet.bladder;
+        }
+    }
+
+    function fillFun() {
+        if (pet.fun <= 99 && pet.bladder != 0) {
+            pet.fun += 10;
+        }
+        else if (pet.fun == 0 || pet.fun > 100) {
+            pet.fun += 0;
+        } else if (pet.fun <= 91 && pet.fun <= 100) {
+            pet.fun += 100 - pet.fun;
+        }
+    }
+
+    function fillEnergy() {
+        if (pet.energy <= 99 && pet.hunger != 0) {
+            pet.energy += 10;
+        }
+        else if (pet.energy == 0 || pet.energy > 100) {
+            pet.energy += 0;
+        } else if (pet.energy <= 91 && pet.energy <= 100) {
+            pet.energy += 100 - pet.energy;
+        }
+    }
+
+    function fillHappy() {
+        if (pet.happy <= 99 && pet.bladder != 0 && pet.fun != 0 && pet.hunger != 0) {
+            pet.happy += 10;
+        }
+        else if (pet.happy == 0 || pet.happy > 100) {
+            pet.happy += 0;
+        } else if (pet.happy <= 91 && pet.happy <= 100) {
+            pet.happy += 100 - pet.happy;
+        }
+    }
 }
 
 window.onload = function () {
