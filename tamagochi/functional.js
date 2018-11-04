@@ -1,20 +1,24 @@
 function Pet(name) {
+    //constructor for pet
     function Animal(time, hunger, clock1, bladder, clock2, fun, clock3, energy, clock4, happy, clock5, gameover) {
-        this.time = time;//0;
-        this.hunger = hunger;//100;
-        this.clock1 = clock1;//setInterval(depleteH, interval);
-        this.bladder = bladder;//100;
-        this.clock2 = clock2;//setInterval(depleteB, interval);
-        this.fun = fun;//100;
-        this.clock3 = clock3;//setInterval(depleteF, interval);
-        this.energy = energy;//100;
-        this.clock4 = clock4;//setInterval(depleteE, interval);
-        this.happy = happy;//100;
-        this.clock5 = clock5;//setInterval(depleteHap, interval);
-        this.gameover = gameover;//0;
+        this.time = time;//live time of pet
+        this.hunger = hunger;//start hunger level
+        this.clock1 = clock1;//interval for decrement function of hunger
+        this.bladder = bladder;//start bladder level;
+        this.clock2 = clock2;//interval for decrement function of bladder
+        this.fun = fun;//start fun level
+        this.clock3 = clock3;//interval for decrement function of fun
+        this.energy = energy;//start energy level
+        this.clock4 = clock4;//interval for decrement function of energy
+        this.happy = happy;//start happy level
+        this.clock5 = clock5;//interval for decrement function of happy
+        this.gameover = gameover;//counter gameovers
     }
-
+    
+//create new object
     var pet = new Animal(0, 100, setInterval(depleteH, 1000), 100, setInterval(depleteB, 1000), 100, setInterval(depleteF, 1000), 100, setInterval(depleteE, 1000), 100, setInterval(depleteHap, 1000), 0);
+  
+    //decrement function for pet.hanger 
     function depleteH() {
         if (pet.hunger == 0) {
             document.getElementById('hungger').innerHTML = "Your pet is starving!";
@@ -36,7 +40,8 @@ function Pet(name) {
             pet.hunger--;
         document.getElementById("HungerBar").value = pet.hunger;
     }
-
+    
+  //decrement function for pet.bladder 
     function depleteB() {
         if (pet.bladder == 0) {
             document.getElementById('bladder').innerHTML = "Your pet has become sick!";
@@ -59,7 +64,8 @@ function Pet(name) {
         document.getElementById("BladderBar").value = pet.bladder;
 
     }
-
+    
+ //decrement function for pet.fun 
     function depleteF() {
         if (pet.fun == 0) {
             document.getElementById('fun').innerHTML = "Your pet is depressed!";
@@ -82,7 +88,8 @@ function Pet(name) {
         document.getElementById("FunBar").value = pet.fun;
 
     }
-
+    
+ //decrement function for pet.energy
     function depleteE() {
         if (pet.energy == 0) {
             document.getElementById('energy').innerHTML = "Your pet is tired!";
@@ -103,8 +110,9 @@ function Pet(name) {
         } else if (pet.energy !== 0)
             pet.energy--;
         document.getElementById("EnergyBar").value = pet.energy;
-
     }
+    
+     //decrement function for pet.happy
     function depleteHap() {
         if (pet.happy == 0) {
             document.getElementById('happy').innerHTML = "Your pet can to do suiside!";
@@ -128,6 +136,7 @@ function Pet(name) {
 
     }
 
+    //events conect to function increment pet properties
     document.getElementById("BtnHunger").onclick = fillHunger;
     document.getElementById("BtnBladder").onclick = fillBladder;
     document.getElementById("BtnFun").onclick = fillFun;
@@ -135,6 +144,7 @@ function Pet(name) {
     document.getElementById("BtnHappiness").onclick = fillHappy;
     document.getElementById("BtnKill").onclick = killPet;
 
+    //function gameover and kill your pet
     function gameovercheck() {
         if (pet.hunger == 0 && pet.bladder == 0 && pet.fun == 0 && pet.happy == 0 && pet.energy == 0 && pet.gameover == 0) {
             pet.gameover++;
@@ -142,7 +152,6 @@ function Pet(name) {
             alert("Game Over!");
             spriteHandler();
             delete pet;
-
         }
         else {
             spriteHandler();
@@ -150,12 +159,14 @@ function Pet(name) {
         }
     }
 
+    //function show image your deaded pet
     function spriteHandler() {
         if (pet.hunger == 0 && pet.bladder == 0 && pet.fun == 0 && pet.energy == 0 && pet.happy == 0) {
             document.getElementById("Sprite").src = "https://orig00.deviantart.net/7a8e/f/2018/049/f/f/dead_pet_asset_js_game_by_karukami1-dc3jgfu.png";
         }
     }
 
+    //function is counter your pet`s life
     function getTime() {
         if (pet.hunger > 0 && pet.bladder > 0 && pet.fun > 0 && pet.energy > 0 && pet.happy > 0) {
             document.getElementById("TimeValue").value = pet.time;
@@ -166,7 +177,7 @@ function Pet(name) {
     }
     setInterval(getTime, 1000);
 
-
+//function kill your pet
     function killPet() {
         pet.fun = 0;
         pet.happy = 0;
@@ -177,6 +188,7 @@ function Pet(name) {
         delete pet;
     }
 
+    //function feed your pet
     function fillHunger() {
         if (pet.hunger <= 99 && pet.hunger != 0) {
             pet.hunger += 10;
@@ -188,6 +200,7 @@ function Pet(name) {
         }
     }
 
+    //function visit toilet by your pet
     function fillBladder() {
         if (pet.bladder <= 99 && pet.bladder != 0) {
             pet.bladder += 10;
@@ -199,6 +212,7 @@ function Pet(name) {
         }
     }
 
+    //function give fun your pet
     function fillFun() {
         if (pet.fun <= 99 && pet.bladder != 0) {
             pet.fun += 10;
@@ -210,6 +224,7 @@ function Pet(name) {
         }
     }
 
+    //function-energetic for your pet
     function fillEnergy() {
         if (pet.energy <= 99 && pet.hunger != 0) {
             pet.energy += 10;
@@ -221,6 +236,7 @@ function Pet(name) {
         }
     }
 
+    //function give happy for your pet
     function fillHappy() {
         if (pet.happy <= 99 && pet.bladder != 0 && pet.fun != 0 && pet.hunger != 0) {
             pet.happy += 10;
@@ -233,6 +249,7 @@ function Pet(name) {
     }
 }
 
+//function what impulse dive name your pet in another way game isn`t start
 window.onload = function () {
     var ret = true;
     while (ret) {
