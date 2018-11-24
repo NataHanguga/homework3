@@ -1,0 +1,89 @@
+body {
+	background-image: url("https://scontent.fscl12-1.fna.fbcdn.net/v/t1.0-9/27867599_2041077069473829_5930629420038157849_n.jpg?oh=2e2228a20c7b2f690b20a32b51b26859&oe=5B18B5B9");
+}
+
+#TitleText {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: Center;
+	font-family: Lucida console;
+	text-shadow: 0px 2px 4px grey;
+	width: 85%;
+	background-color: #FFFFFF;
+	box-shadow: 0px 2px 4px grey;
+}
+#mess{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: Center;
+	font-family: Lucida console;
+	text-shadow: 0px 2px 4px rgb(18, 143, 201);
+	width: 85%;
+	height: 100px;
+	background-color: #FFFFFF;
+	box-shadow: 0px 2px 4px rgb(18, 143, 201);
+}
+#TimeCounter {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-family: sans-serif;
+	text-shadow: 0px 2px 2px grey;
+	width: 40%;
+	background-color: #FFFFFF;
+	box-shadow: 0px 2px 4px grey;
+	transform: translate(0px,-10px);
+}
+#petPosition{
+	text-align: justify;
+	width:100%;
+	margin-top: 20px;
+}
+#Pet{
+	text-align: left;
+	width:40%;
+}
+#options{
+	margin-left:200px;
+	margin-top: -140px; 
+	text-align: left;
+	width:60%;
+}
+#StatHunger ,#StatBladder,#StatFun,#StatEnergy,#StatHappiness{
+	font-family: sans-serif;
+	margin-left: auto;
+	margin-right: auto;
+	color: #FFFFFF;
+	text-shadow: 0px 1px 3px black, 0px -1px 3px black;
+}
+
+input{
+	background-color: #4cafff;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input:hover{
+	background-color:#4cafff;
+}
+#Buttons{
+	width: 100%;
+}
+#BtnKill{
+	background-color: #ec1010;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
