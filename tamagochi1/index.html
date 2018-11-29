@@ -12,12 +12,13 @@
 
 <body>
     <form name="KaruPet">
+
         <div id="TitleText">
             <h1> Tamagochi Pet</h1>
             <h2 id="name"></h2>
         </div>
         <div id="mess">
-            Hunger Level:<span id="hungger"></span><br>
+            Hunger Level:<span id="hunger"></span><br>
             Bladder Level:<span id="bladder"></span><br>
             Fun Level: <span id="fun"></span><br>
             Energy Level: <span id="energy"></span><br>
@@ -34,7 +35,7 @@
             <div id="options">
                 <div id="TimeCounter">
                     <!--This is the Money display-->
-                    <p>Live time: <output type="inline" id="TimeValue" v-if="value" :value="0"></output> s</p>
+                    <p>Live time: <output type="inline" id="TimeValue" value="0"></output> s</p>
                 </div>
                 <div id="StatHunger">
                     <p align="Center">
@@ -68,6 +69,7 @@
                         </progress>
                     </p>
                 </div>
+
             </div>
             <div id="Buttons">
                 <p align="Center">
@@ -79,6 +81,8 @@
                     <input id="BtnKill" type="Button" value="Kill Pet">
                 </p>
             </div>
+            <div id="mem"></div>
+
 </body>
 
 </html>

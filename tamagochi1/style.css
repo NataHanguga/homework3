@@ -1,5 +1,6 @@
 body {
 	background-image: url("https://scontent.fscl12-1.fna.fbcdn.net/v/t1.0-9/27867599_2041077069473829_5930629420038157849_n.jpg?oh=2e2228a20c7b2f690b20a32b51b26859&oe=5B18B5B9");
+	background-color:#E3E4E5;
 }
 
 #TitleText {
@@ -35,19 +36,19 @@ body {
 	transform: translate(0px,-10px);
 }
 #petPosition{
-	text-align: justify;
+	text-align: left;
 	width:100%;
-	margin-top: 20px;
+	margin-top: 220px;
 }
 #Pet{
 	text-align: left;
 	width:40%;
 }
 #options{
-	margin-left:200px;
+	margin-left:90px;
 	margin-top: -140px; 
 	text-align: left;
-	width:60%;
+	width:100%;
 }
 #StatHunger ,#StatBladder,#StatFun,#StatEnergy,#StatHappiness{
 	font-family: sans-serif;
