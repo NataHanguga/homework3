@@ -123,7 +123,12 @@ function Pet(name) { // constructor for ur pet
     }
 // function for gameover
     function gameovercheck() {
-        if (pet.hunger == 0 && pet.bladder == 0 && pet.fun == 0 && pet.happy == 0 && pet.energy == 0 && pet.gameover == 0) {
+        if (pet.hunger === 0 && 
+            pet.bladder === 0 && 
+            pet.fun === 0 && 
+            pet.happy === 0 &&
+            pet.energy === 0 && 
+            pet.gameover === 0) {
             pet.gameover++;
             document.getElementById('name').innerHTML = 'RIP\n' + name;
             alert("Game Over!");
@@ -137,7 +142,11 @@ function Pet(name) { // constructor for ur pet
     }
  // show ur dead pet photo
     function spriteHandler() {
-        if (pet.hunger == 0 && pet.bladder == 0 && pet.fun == 0 && pet.energy == 0 && pet.happy == 0) {
+        if (pet.hunger === 0 && 
+            pet.bladder === 0 && 
+            pet.fun === 0 && 
+            pet.happy === 0 &&
+            pet.energy === 0 ) {
             document.getElementById("Sprite").src = "https://orig00.deviantart.net/7a8e/f/2018/049/f/f/dead_pet_asset_js_game_by_karukami1-dc3jgfu.png";
         }
     }
@@ -147,8 +156,8 @@ function Pet(name) { // constructor for ur pet
             document.getElementById("TimeValue").value = pet.time;
             pet.time++;
         }
-        if (pet.time == 1000) alert('good job)) your pet still alive');
-        else if (pet.time == 3000) alert('u a good ovner)) your pet still alive');
+        if (pet.time === 1000) alert('good job)) your pet still alive');
+        else if (pet.time === 3000) alert('u a good ovner)) your pet still alive');
     }
     setInterval(getTime, 1000);
 
@@ -168,7 +177,7 @@ function Pet(name) { // constructor for ur pet
         if (pet.hunger <= 99 && pet.hunger != 0) {
             pet.hunger += 10;
         }
-        else if (pet.hunger == 0 || pet.hunger > 100) {
+        else if (pet.hunger === 0 || pet.hunger > 100) {
             pet.hunger += 0;
         } else if (pet.hunger <= 91 && pet.hunger <= 100) {
             pet.hunger += 100 - pet.hunger;
@@ -179,7 +188,7 @@ function Pet(name) { // constructor for ur pet
         if (pet.bladder <= 99 && pet.bladder != 0) {
             pet.bladder += 10;
         }
-        else if (pet.bladder == 0 || pet.bladder > 100) {
+        else if (pet.bladder === 0 || pet.bladder > 100) {
             pet.bladder += 0;
         } else if (pet.bladder <= 91 && pet.bladder <= 100) {
             pet.bladder += 100 - pet.bladder;
@@ -190,7 +199,7 @@ function Pet(name) { // constructor for ur pet
         if (pet.fun <= 99 && pet.bladder != 0) {
             pet.fun += 10;
         }
-        else if (pet.fun == 0 || pet.fun > 100) {
+        else if (pet.fun === 0 || pet.fun > 100) {
             pet.fun += 0;
         } else if (pet.fun <= 91 && pet.fun <= 100) {
             pet.fun += 100 - pet.fun;
@@ -201,7 +210,7 @@ function Pet(name) { // constructor for ur pet
         if (pet.energy <= 99 && pet.hunger != 0) {
             pet.energy += 10;
         }
-        else if (pet.energy == 0 || pet.energy > 100) {
+        else if (pet.energy === 0 || pet.energy > 100) {
             pet.energy += 0;
         } else if (pet.energy <= 91 && pet.energy <= 100) {
             pet.energy += 100 - pet.energy;
@@ -224,7 +233,7 @@ window.onload = function () {
     var ret = true;
     while (ret) {
         var name = prompt("name pet");
-        if (name == null || name == '' || name == 'null') {
+        if (name === null || name === '' || name === 'null') {
             ret = true;
 
         } else if (name !== null) {
