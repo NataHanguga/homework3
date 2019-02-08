@@ -1,4 +1,4 @@
-function Pet(name) {
+function Pet(name) { // constructor for ur pet
     function Animal(time, hunger, clock1, bladder, clock2, fun, clock3, energy, clock4, happy, clock5, gameover) {
         this.time = time;//0;
         this.hunger = hunger;//100;
@@ -13,7 +13,7 @@ function Pet(name) {
         this.clock5 = clock5;//setInterval(depleteHap, interval);
         this.gameover = gameover;//0;
     }
-
+// messages about ur pet`s life properties 
    let message = {
         hunger: {
             mes0: "Your pet is starving!",
@@ -54,7 +54,7 @@ function Pet(name) {
             mes100: "Your pet gives happy all the world)))",
         },
     }
-
+ // create new pet
     let pet = new Animal(0, 100, setInterval(()=>depletePetProperties(
         'hunger', 
         'HungerBar',
@@ -106,6 +106,7 @@ function Pet(name) {
           message.happy.mes25,
           message.happy.mes0), 1000), 0);
 
+    // function for initialisation pet life properties progress
     function depletePetProperties(id, btn, option, timer, mes100, mes75, mes50, mes25, mes0) {
        console.log( typeof message.hunger.mes0);
        document.getElementById(id).innerHTML = mes100;
@@ -120,7 +121,7 @@ function Pet(name) {
             gameovercheck();
         }
     }
-
+// function for gameover
     function gameovercheck() {
         if (pet.hunger == 0 && pet.bladder == 0 && pet.fun == 0 && pet.happy == 0 && pet.energy == 0 && pet.gameover == 0) {
             pet.gameover++;
@@ -134,13 +135,13 @@ function Pet(name) {
             delete pet;
         }
     }
-
+ // show ur dead pet photo
     function spriteHandler() {
         if (pet.hunger == 0 && pet.bladder == 0 && pet.fun == 0 && pet.energy == 0 && pet.happy == 0) {
             document.getElementById("Sprite").src = "https://orig00.deviantart.net/7a8e/f/2018/049/f/f/dead_pet_asset_js_game_by_karukami1-dc3jgfu.png";
         }
     }
-
+ // pet life timer
     function getTime() {
         if (pet.hunger > 0 && pet.bladder > 0 && pet.fun > 0 && pet.energy > 0 && pet.happy > 0) {
             document.getElementById("TimeValue").value = pet.time;
@@ -151,7 +152,7 @@ function Pet(name) {
     }
     setInterval(getTime, 1000);
 
-
+// function for kill ur pet
     document.getElementById('BtnKill').onclick = function killPet() {
         pet.fun = 0;
         pet.happy = 0;
@@ -162,6 +163,7 @@ function Pet(name) {
         delete pet;
     }
 
+    // functions for check pet`s life property
     document.getElementById("BtnHunger").onclick = function () {
         if (pet.hunger <= 99 && pet.hunger != 0) {
             pet.hunger += 10;
@@ -217,7 +219,7 @@ function Pet(name) {
         }
     }
 }
-
+ // load game onload page
 window.onload = function () {
     var ret = true;
     while (ret) {
