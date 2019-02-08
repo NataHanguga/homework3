@@ -108,7 +108,6 @@ function Pet(name) { // constructor for ur pet
 
     // function for initialisation pet life properties progress
     function depletePetProperties(id, btn, option, timer, mes100, mes75, mes50, mes25, mes0) {
-       console.log( typeof message.hunger.mes0);
        document.getElementById(id).innerHTML = mes100;
           if (option === 100) document.getElementById(id).innerHTML = mes100;
           else if (option === 75)  document.getElementById(id).innerHTML = mes75;
@@ -237,8 +236,6 @@ window.onload = function () {
             ret = true;
 
         } else if (name !== null) {
-            console.log(name);
-
             document.getElementById('name').innerHTML = name;
             Pet(name);
             ret = false;
